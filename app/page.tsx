@@ -140,7 +140,8 @@ export default function HomePage() {
   flex-shrink: 0;
   box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
   overflow: hidden;
-  aspect-ratio: 1/1;}
+  aspect-ratio: 1/1;
+  position: relative;}
 .estrelas{color:#FFD700;font-size:13px;text-shadow:0 0 5px rgba(255,215,0,.5)}
 .nome-usuario{color:#FFD700;font-weight:bold;font-size:13px}
 .texto-depoimento{color:#fff;font-size:12px;line-height:1.4;font-style:italic}
@@ -168,7 +169,7 @@ export default function HomePage() {
   padding-top: 100px;
   contain: layout style paint;}
 .copyright{position:relative;margin-top:40px;padding:20px;color:#888;font-size:12px;text-align:center}
-@media (max-width:768px){.container-preto{padding:25px!important;margin:10px!important;border-radius:20px!important}.logo-container{margin-bottom:30px!important}.logo-arredondada{width:160px!important;height:100px!important;border:3px solid #dc2626!important}.titulo-principal{font-size:26px!important;margin-bottom:18px!important;line-height:1.2!important}.subtitulo{font-size:16px!important;margin-bottom:25px!important}.depoimento{padding:15px;margin:20px auto;max-width:95%}.btn-quiz-pulsante{padding:16px 32px!important;font-size:16px!important;max-width:95%!important}.main-content{padding-top:20px;min-height:calc(100vh - 40px)}.copyright{margin-top:30px;padding:15px}}
+@media (max-width:768px){.container-preto{padding:25px!important;margin:10px!important;border-radius:20px!important}.logo-container{margin-bottom:30px!important}.logo-arredondada{width:160px!important;height:100px!important;border:3px solid #dc2626!important}.titulo-principal{font-size:26px!important;margin-bottom:18px!important;line-height:1.2!important}.subtitulo{font-size:16px!important;margin-bottom:25px!important}.depoimento{padding:15px;margin:20px auto;max-width:95%}.btn-quiz-pulsante{padding:16px 32px!important;font-size:16px!important;max-width:95%!important}.main-content{padding-top:20px;min-height:calc(100vh - 40px)}.copyright{margin-top:30px;padding:15px}.avatar{width:45px;height:45px}}
 @media (max-width:480px){.container-preto{padding:20px!important;margin:5px!important}.logo-arredondada{width:140px!important;height:85px!important;border:2px solid #dc2626!important}.titulo-principal{font-size:22px!important;line-height:1.1!important}.subtitulo{font-size:14px!important}.depoimento{padding:12px;gap:10px;margin:15px auto}.avatar{width:35px;height:35px}.btn-quiz-pulsante{padding:14px 28px!important;font-size:14px!important}.copyright{margin-top:25px;padding:10px;font-size:11px}}
 @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
 `}</style>
@@ -289,22 +290,43 @@ export default function HomePage() {
               ⚠️ Atención: Solo 50 mujeres por día pueden acceder al Método RENACER. ¡No pierdas tu oportunidad!
             </div>
 
-            {/* DEPOIMENTO RÁPIDO */}
+            {/* DEPOIMENTO CORRIGIDO - IMAGEM FUNCIONANDO */}
             <div className="depoimento">
               <div className="avatar">
-                <div style={{
-                  width: "100%", 
-                  height: "100%", 
-                  background: "linear-gradient(135deg, #FFD700, #FFA500)", 
-                  display: "flex", 
-                  alignItems: "center", 
-                  justifyContent: "center",
-                  fontSize: "18px",
-                  fontWeight: "bold",
-                  color: "#000"
-                }}>
+                <Image
                   src="https://plansistema.shop/wp-content/uploads/2025/09/1-dobra-1-e1756257363224.webp"
-                </div>
+                  alt="María C. - Depoimento"
+                  width={55}
+                  height={55}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "50%"
+                  }}
+                  quality={60}
+                  sizes="(max-width: 480px) 35px, (max-width: 768px) 45px, 55px"
+                  onError={(e) => {
+                    // Fallback para imagem dourada caso a imagem não carregue
+                    e.target.style.display = "none"
+                    e.target.parentElement.innerHTML = `
+                      <div style="
+                        width: 100%; 
+                        height: 100%; 
+                        background: linear-gradient(135deg, #FFD700, #FFA500); 
+                        display: flex; 
+                        align-items: center; 
+                        justifyContent: center;
+                        fontSize: 18px;
+                        fontWeight: bold;
+                        color: #000;
+                        borderRadius: 50%;
+                      ">
+                        MC
+                      </div>
+                    `
+                  }}
+                />
               </div>
               <div style={{flex: 1}}>
                 <div className="estrelas">⭐⭐⭐⭐⭐</div>
