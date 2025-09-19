@@ -18,7 +18,7 @@ import { enviarEvento } from "../../lib/analytics"
 
 export default function ResultPageOptimized() {
   const [isLoaded, setIsLoaded] = useState(false)
-  const [recentBuyers, setRecentBuyers] = useState(3)
+  const [recentBuyers, setRecentBuyers] = useState(7)
   const [userGender, setUserGender] = useState<string>("")
   const contentRef = useRef<HTMLDivElement>(null)
 
@@ -34,7 +34,7 @@ export default function ResultPageOptimized() {
     const interval = setInterval(() => {
       setRecentBuyers((prev) => {
         const increase = Math.floor(Math.random() * 2) + 1
-        return Math.min(prev + increase, 23)
+        return Math.min(prev + increase, 31)
       })
     }, 45000)
 
@@ -45,7 +45,7 @@ export default function ResultPageOptimized() {
       console.error("Error al registrar evento:", error)
     }
 
-    // Carrega script do VTurb
+    // Carrega script do VTurb (adaptado para novo conteúdo)
     const loadVTurbScript = () => {
       if (!document.querySelector('script[src*="68cc44955c346294924218e1"]')) {
         const script = document.createElement("script")
@@ -68,11 +68,11 @@ export default function ResultPageOptimized() {
     } catch (error) {
       console.error("Error al registrar evento de clic:", error)
     }
-    window.open("https://pay.hotmart.com/F100142422S?off=0p2j9dbs&checkoutMode=10&offDiscount=PLAN", "_blank")
+    window.open("https://pay.hotmart.com/F100142422S?off=0p2j9dbs&checkoutMode=10&offDiscount=RENACER", "_blank")
   }
 
   const getPersonalizedPronoun = () => {
-    return userGender === "FEMININO" ? "él" : "ella"
+    return userGender === "MASCULINO" ? "una nueva versión de ti mismo" : "una nueva versión de ti misma"
   }
 
   const handleTouchFeedback = () => {
@@ -94,83 +94,83 @@ export default function ResultPageOptimized() {
 
       <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black overflow-x-hidden w-full max-w-[100vw] mobile-container" ref={contentRef}>
         
-        {/* ✅ SEÇÃO 1: RESULTADO INICIAL ENXUTO */}
+        {/* ✅ SEÇÃO 1: RESULTADO INICIAL ADAPTADO */}
         <div className="relative overflow-hidden w-full">
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-red-600/20 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 animate-pulse"></div>
 
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : -20 }}
             className="relative z-10 mobile-padding text-center w-full"
           >
-            {/* Headline Principal */}
+            {/* Headline Principal Adaptada */}
             <h1 className="mobile-headline text-white mb-4 sm:mb-6 leading-tight max-w-full break-words">
-              🎯 <span className="text-orange-400">¡FELICITACIONES!</span>
+              🎯 <span className="text-purple-400">¡FELICITACIONES!</span>
               <br />
-              TU CASO TIENE <span className="text-green-400">90,5%</span>
+              TU PERFIL TIENE <span className="text-green-400">92,3%</span>
               <br />
-              DE PROBABILIDAD DE ÉXITO
+              DE POTENCIAL DE TRANSFORMACIÓN
             </h1>
 
-            {/* Resultado Visual Simples */}
+            {/* Resultado Visual Adaptado */}
             <div className="max-w-sm mx-auto mb-6 sm:mb-8 w-full">
-              <div className="bg-gradient-to-r from-green-500 to-emerald-600 mobile-border rounded-2xl mobile-card-padding shadow-2xl max-w-full">
-                <div className="mobile-circle mx-auto bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mobile-border-white mb-4">
+              <div className="bg-gradient-to-r from-purple-500 to-pink-600 mobile-border rounded-2xl mobile-card-padding shadow-2xl max-w-full">
+                <div className="mobile-circle mx-auto bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-content mobile-border-white mb-4">
                   <div className="text-center">
-                    <span className="mobile-percentage font-extrabold text-black">90,5%</span>
+                    <span className="mobile-percentage font-extrabold text-black">92,3%</span>
                     <p className="mobile-success-text font-bold text-black">ÉXITO</p>
                   </div>
                 </div>
                 
                 <div className="text-white space-y-2 mobile-info-text">
-                  <p><strong>Tiempo estimado:</strong> 14-21 días</p>
-                  <p><strong>Estrategia:</strong> Plan A</p>
-                  <p><strong>Tipo:</strong> Altamente recuperable</p>
+                  <p><strong>Tiempo estimado:</strong> 21 días</p>
+                  <p><strong>Método:</strong> RENACER</p>
+                  <p><strong>Tipo:</strong> Transformación profunda</p>
                 </div>
               </div>
             </div>
 
-            {/* Transição para VSL */}
+            {/* Transição para VSL Adaptada */}
             <p className="mobile-transition-text text-gray-300 mb-4 font-semibold max-w-full break-words px-2">
-              Ahora descubre <span className="text-orange-400 font-bold">cómo es posible</span> este resultado:
+              Ahora descubre <span className="text-purple-400 font-bold">cómo transformar tu dolor en poder</span>:
             </p>
           </motion.div>
         </div>
 
-        {/* ✅ SEÇÃO 2: VSL PRINCIPAL (POSIÇÃO OTIMIZADA) */}
+        {/* ✅ SEÇÃO 2: VSL PRINCIPAL ADAPTADA */}
         <div className="mobile-padding bg-gradient-to-r from-gray-900 to-black w-full">
           <div className="max-w-4xl mx-auto w-full">
             <div className="text-center mb-6">
               <h2 className="mobile-section-title font-bold text-white mb-4 max-w-full break-words">
-                🎯 <span className="text-orange-400">EL MÉTODO</span> QUE HACE POSIBLE TU RESULTADO
+                💫 <span className="text-purple-400">EL MÉTODO</span> QUE TRANSFORMARÁ TU VIDA AMOROSA
               </h2>
               
               <div className="max-w-2xl mx-auto mb-6 w-full">
                 <p className="mobile-description text-gray-300 mb-4 break-words">
-                  Mira este video donde 3 especialistas revelan:
+                  Mira este video donde la Dra. Sofia Mendez revela:
                 </p>
                 <div className="text-left bg-black/30 rounded-lg mobile-list-padding space-y-2 w-full">
                   <div className="flex items-start text-white mobile-list-text">
                     <Check className="mobile-check-icon text-green-400 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" />
-                    <span className="break-words">Por qué tu caso tiene <strong className="text-orange-400">90,5% de éxito</strong></span>
+                    <span className="break-words">Por qué tu perfil tiene <strong className="text-purple-400">92,3% de potencial</strong></span>
                   </div>
                   <div className="flex items-start text-white mobile-list-text">
                     <Check className="mobile-check-icon text-green-400 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" />
-                    <span className="break-words">Los <strong className="text-orange-400">disparadores</strong> que funcionan en 21 días</span>
+                    <span className="break-words">Los <strong className="text-purple-400">7 pilares</strong> para sanar y renacer</span>
                   </div>
                   <div className="flex items-start text-white mobile-list-text">
                     <Check className="mobile-check-icon text-green-400 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" />
-                    <span className="break-words">Cómo aplicarlo <strong className="text-orange-400">paso a paso</strong></span>
+                    <span className="break-words">Cómo atraer <strong className="text-purple-400">amor consciente</strong> en 21 días</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* VSL CENTRALIZADA COM VTURB */}
+            {/* VSL CENTRALIZADA COM VTURB ADAPTADA */}
             <div className="flex justify-center mb-6 sm:mb-8 w-full">
               <div className="w-full max-w-3xl">
-                <div className="relative bg-black rounded-xl sm:rounded-2xl mobile-video-padding mobile-border-orange shadow-2xl w-full">
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-xl sm:rounded-2xl animate-pulse"></div>
+                <div className="relative bg-black rounded-xl sm:rounded-2xl mobile-video-padding mobile-border-purple shadow-2xl w-full">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-xl sm:rounded-2xl animate-pulse"></div>
                   <div className="relative z-10 w-full mobile-video-container">
                     <vturb-smartplayer 
                       id="vid-68cc44955c346294924218e1" 
@@ -181,10 +181,10 @@ export default function ResultPageOptimized() {
               </div>
             </div>
 
-            {/* CTA ÚNICO APÓS VSL */}
+            {/* CTA ÚNICO APÓS VSL ADAPTADO */}
             <div className="text-center w-full">
-              <div className="bg-orange-600 text-white mobile-badge-padding rounded-full inline-block font-bold mobile-badge-text mb-4 sm:mb-6 animate-bounce max-w-full">
-                👆 APLICA ESTO Y VERÁS RESULTADOS EN DÍAS
+              <div className="bg-purple-600 text-white mobile-badge-padding rounded-full inline-block font-bold mobile-badge-text mb-4 sm:mb-6 animate-bounce max-w-full">
+                👆 TRANSFORMA TU VIDA AMOROSA PARA SIEMPRE
               </div>
 
               <motion.div
@@ -206,51 +206,51 @@ export default function ResultPageOptimized() {
                 >
                   <Heart className="mobile-icon-size mr-2 flex-shrink-0" />
                   <span className="mobile-cta-text text-center leading-tight break-words">
-                    <span className="mobile-show">APLICAR MÉTODO - $19</span>
-                    <span className="desktop-show">QUIERO APLICAR ESTE MÉTODO - $19</span>
+                    <span className="mobile-show">TRANSFORMAR AHORA - $27</span>
+                    <span className="desktop-show">QUIERO TRANSFORMAR MI VIDA - $27</span>
                   </span>
                   <ArrowRight className="mobile-icon-size ml-2 flex-shrink-0" />
                 </Button>
               </motion.div>
 
               <p className="text-white mobile-description font-semibold mt-4 max-w-full break-words px-2">
-                Ahora que conoces el método, es hora de <span className="text-orange-400">ponerlo en práctica</span>
+                Es hora de convertirte en <span className="text-purple-400">{getPersonalizedPronoun()}</span>
               </p>
             </div>
           </div>
         </div>
 
-        {/* ✅ SEÇÃO 3: PROVA SOCIAL RÁPIDA (1 DEPOIMENTO EM VÍDEO) */}
+        {/* ✅ SEÇÃO 3: PROVA SOCIAL ADAPTADA (DEPOIMENTO FEMININO) */}
         <div className="mobile-padding bg-gradient-to-r from-black to-gray-900 w-full">
           <div className="max-w-4xl mx-auto w-full">
             <div className="text-center mb-6">
               <h3 className="mobile-subsection-title font-bold text-white mb-2 max-w-full break-words">
-                💬 <span className="text-orange-400">TESTIMONIO REAL</span> DE QUIEN YA LO LOGRÓ
+                💬 <span className="text-purple-400">TESTIMONIO REAL</span> DE TRANSFORMACIÓN
               </h3>
               <p className="text-gray-300 mobile-small-text break-words">
-                Escucha la historia de transformación usando exactamente el mismo método
+                Escucha cómo María transformó completamente su vida amorosa
               </p>
             </div>
 
-            {/* Depoimento em Vídeo Centralizado */}
+            {/* Depoimento em Vídeo Feminino */}
             <div className="flex justify-center mb-6 sm:mb-8 w-full">
               <div className="w-full max-w-xs">
-                <div className="relative bg-black rounded-xl sm:rounded-2xl p-2 mobile-border-orange shadow-xl overflow-hidden w-full">
+                <div className="relative bg-black rounded-xl sm:rounded-2xl p-2 mobile-border-purple shadow-xl overflow-hidden w-full">
                   
-                  {/* Header do Story */}
+                  {/* Header do Story Adaptado */}
                   <div className="flex items-center p-2 pb-1">
-                    <div className="mobile-avatar rounded-full border border-orange-400 overflow-hidden mr-2 flex-shrink-0">
-                      <div className="w-full h-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
-                        <span className="text-white font-bold mobile-avatar-text">FB</span>
+                    <div className="mobile-avatar rounded-full border border-purple-400 overflow-hidden mr-2 flex-shrink-0">
+                      <div className="w-full h-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+                        <span className="text-white font-bold mobile-avatar-text">MC</span>
                       </div>
                     </div>
                     <div className="flex-1 text-left min-w-0">
-                      <h4 className="text-white font-bold mobile-name-text truncate">Facundo B.</h4>
-                      <p className="text-green-400 mobile-status-text font-semibold">✅ Reconciliado en 15 días</p>
+                      <h4 className="text-white font-bold mobile-name-text truncate">María C.</h4>
+                      <p className="text-green-400 mobile-status-text font-semibold">✅ Transformada en 18 días</p>
                     </div>
                   </div>
 
-                  {/* Vídeo Story - Mantendo Wistia para o depoimento */}
+                  {/* Vídeo Story Adaptado */}
                   <div className="relative mobile-story-video bg-gray-900 rounded-xl overflow-hidden w-full">
                     <script src="https://fast.wistia.com/player.js" async></script>
                     <script src="https://fast.wistia.com/embed/3rj8vdh574.js" async type="module"></script>
@@ -261,7 +261,7 @@ export default function ResultPageOptimized() {
                     ></wistia-player>
                   </div>
 
-                  {/* Footer com CTA */}
+                  {/* Footer com CTA Adaptado */}
                   <div className="p-2 text-center w-full">
                     <Button
                       onClick={handlePurchase}
@@ -270,8 +270,8 @@ export default function ResultPageOptimized() {
                     >
                       <Play className="mobile-small-icon mr-1 flex-shrink-0" />
                       <span className="mobile-cta-small-text truncate">
-                        <span className="mobile-show">QUIERO RESULTADOS</span>
-                        <span className="desktop-show">QUIERO LOS MISMOS RESULTADOS</span>
+                        <span className="mobile-show">QUIERO TRANSFORMARME</span>
+                        <span className="desktop-show">QUIERO LA MISMA TRANSFORMACIÓN</span>
                       </span>
                     </Button>
                   </div>
@@ -279,60 +279,60 @@ export default function ResultPageOptimized() {
               </div>
             </div>
 
-            {/* Números de Prova Social */}
+            {/* Números de Prova Social Adaptados */}
             <div className="mobile-grid max-w-2xl mx-auto w-full">
-              <div className="bg-gray-800 mobile-stats-padding rounded-lg mobile-border-orange text-center">
-                <div className="mobile-stats-number font-bold text-orange-400 mb-1">87%</div>
-                <p className="text-white mobile-stats-text break-words">Ven resultados en 14 días</p>
+              <div className="bg-gray-800 mobile-stats-padding rounded-lg mobile-border-purple text-center">
+                <div className="mobile-stats-number font-bold text-purple-400 mb-1">94%</div>
+                <p className="text-white mobile-stats-text break-words">Se transforman en 21 días</p>
               </div>
-              <div className="bg-gray-800 mobile-stats-padding rounded-lg mobile-border-orange text-center">
-                <div className="mobile-stats-number font-bold text-orange-400 mb-1">3.847+</div>
-                <p className="text-white mobile-stats-text break-words">Relaciones recuperadas</p>
+              <div className="bg-gray-800 mobile-stats-padding rounded-lg mobile-border-purple text-center">
+                <div className="mobile-stats-number font-bold text-purple-400 mb-1">4.200+</div>
+                <p className="text-white mobile-stats-text break-words">Mujeres transformadas</p>
               </div>
-              <div className="bg-gray-800 mobile-stats-padding rounded-lg mobile-border-orange text-center">
-                <div className="mobile-stats-number font-bold text-orange-400 mb-1">21</div>
-                <p className="text-white mobile-stats-text break-words">Días o menos</p>
+              <div className="bg-gray-800 mobile-stats-padding rounded-lg mobile-border-purple text-center">
+                <div className="mobile-stats-number font-bold text-purple-400 mb-1">21</div>
+                <p className="text-white mobile-stats-text break-words">Días para renacer</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* ✅ SEÇÃO 4: OFERTA FINAL SIMPLIFICADA */}
+        {/* ✅ SEÇÃO 4: OFERTA FINAL ADAPTADA */}
         <div className="mobile-padding w-full">
           <div className="max-w-4xl mx-auto w-full">
-            <Card className="bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-2xl mobile-border-yellow w-full">
+            <Card className="bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-2xl mobile-border-yellow w-full">
               <CardContent className="mobile-offer-padding text-center w-full">
                 
-                {/* Badge de Oferta */}
+                {/* Badge de Oferta Adaptado */}
                 <div className="bg-yellow-400 text-black font-bold mobile-offer-badge rounded-full inline-block mb-4 sm:mb-6 mobile-badge-text max-w-full">
                   🔥 OFERTA ESPECIAL - SOLO HOY
                 </div>
 
-                <h2 className="mobile-offer-title font-black mb-4 sm:mb-6 break-words">PLAN A - RECUPERACIÓN RÁPIDA</h2>
+                <h2 className="mobile-offer-title font-black mb-4 sm:mb-6 break-words">MÉTODO RENACER - TRANSFORMACIÓN COMPLETA</h2>
 
-                {/* Preço Simples */}
+                {/* Preço Adaptado */}
                 <div className="bg-black/20 rounded-lg mobile-price-padding mb-4 sm:mb-6 w-full">
                   <div className="text-center mb-4">
-                    <div className="mobile-price-main font-black text-yellow-300 mb-2">$19</div>
+                    <div className="mobile-price-main font-black text-yellow-300 mb-2">$27</div>
                     <div className="mobile-price-sub">
-                      <span className="line-through text-gray-400 mr-3">$99,90</span>
-                      <span className="text-green-400 font-bold">AHORRAS $80</span>
+                      <span className="line-through text-gray-400 mr-3">$127</span>
+                      <span className="text-green-400 font-bold">AHORRAS $100</span>
                     </div>
                   </div>
 
-                  {/* O que inclui */}
+                  {/* O que inclui Adaptado */}
                   <div className="text-left space-y-2 sm:space-y-3 max-w-md mx-auto w-full">
                     <div className="flex items-start text-white mobile-feature-text">
                       <Check className="mobile-check-icon text-green-400 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" />
-                      <span className="break-words">Sistema completo Plan A</span>
+                      <span className="break-words">Método RENACER completo</span>
                     </div>
                     <div className="flex items-start text-white mobile-feature-text">
                       <Check className="mobile-check-icon text-green-400 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" />
-                      <span className="break-words">21 Disparadores Emocionales ($47)</span>
+                      <span className="break-words">Guía de Autoestima Magnética ($47)</span>
                     </div>
                     <div className="flex items-start text-white mobile-feature-text">
                       <Check className="mobile-check-icon text-green-400 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" />
-                      <span className="break-words">Protocolo de Emergencia 72H ($37)</span>
+                      <span className="break-words">Plan de Reconstrucción 30 días ($37)</span>
                     </div>
                     <div className="flex items-start text-white mobile-feature-text">
                       <Check className="mobile-check-icon text-green-400 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" />
@@ -345,7 +345,7 @@ export default function ResultPageOptimized() {
                   </div>
                 </div>
 
-                {/* CTA Principal Único */}
+                {/* CTA Principal Adaptado */}
                 <motion.div
                   animate={{
                     scale: [1, 1.05, 1],
@@ -364,14 +364,14 @@ export default function ResultPageOptimized() {
                     onTouchStart={handleTouchFeedback}
                   >
                     <span className="mobile-cta-offer-text text-center leading-tight break-words">
-                      <span className="mobile-show">💕 RECUPERAR - $19</span>
-                      <span className="desktop-show">💕 RECUPERAR AHORA POR $19</span>
+                      <span className="mobile-show">💫 RENACER AHORA - $27</span>
+                      <span className="desktop-show">💫 QUIERO RENACER AHORA POR $27</span>
                     </span>
                     <ArrowRight className="mobile-icon-size ml-2 flex-shrink-0" />
                   </Button>
                 </motion.div>
 
-                {/* Urgência Final */}
+                {/* Urgência Final Adaptada */}
                 <div className="bg-red-800 mobile-urgency-padding rounded-lg mb-4 w-full">
                   <p className="text-yellow-300 font-bold mobile-urgency-text mb-2">⏰ OFERTA EXPIRA EN:</p>
                   <div className="mobile-countdown font-black text-white">
@@ -379,11 +379,11 @@ export default function ResultPageOptimized() {
                   </div>
                 </div>
 
-                {/* Social Proof Final */}
+                {/* Social Proof Final Adaptado */}
                 <div className="flex justify-center mobile-social-gap mobile-social-text text-white mb-4 flex-wrap">
                   <div className="flex items-center">
-                    <Users className="mobile-social-icon text-orange-400 mr-1" />
-                    <span><strong>{recentBuyers}</strong> compraron hoy</span>
+                    <Users className="mobile-social-icon text-purple-400 mr-1" />
+                    <span><strong>{recentBuyers}</strong> se transformaron hoy</span>
                   </div>
                   <div className="flex items-center">
                     <Clock className="mobile-social-icon text-red-400 mr-1" />
@@ -395,7 +395,7 @@ export default function ResultPageOptimized() {
           </div>
         </div>
 
-        {/* ✅ SEÇÃO 5: GARANTIA SIMPLES */}
+        {/* ✅ SEÇÃO 5: GARANTIA ADAPTADA */}
         <div className="mobile-padding bg-gradient-to-r from-green-900/30 to-emerald-900/30 w-full">
           <div className="max-w-4xl mx-auto w-full">
             <Card className="bg-green-50 mobile-border-green shadow-2xl w-full">
@@ -403,17 +403,17 @@ export default function ResultPageOptimized() {
                 <Shield className="mobile-shield-icon text-green-600 mx-auto mb-4" />
                 <h2 className="mobile-guarantee-title font-bold text-green-800 mb-4 break-words">GARANTÍA TOTAL DE 30 DÍAS</h2>
                 <p className="text-green-700 mobile-guarantee-text font-semibold mb-4 break-words">
-                  Si no ves resultados, te devolvemos el 100% de tu dinero
+                  Si no te sientes transformada, te devolvemos el 100% de tu dinero
                 </p>
                 <p className="text-green-600 max-w-2xl mx-auto mobile-guarantee-desc break-words">
-                  Prueba el método durante 30 días. Si no funciona, te devolvemos todo sin hacer preguntas.
+                  Prueba el Método RENACER durante 30 días. Si no sientes una transformación real, te devolvemos todo sin hacer preguntas.
                 </p>
               </CardContent>
             </Card>
           </div>
         </div>
 
-        {/* ✅ SEÇÃO 6: FAQ MÍNIMO (SÓ 3 PERGUNTAS) */}
+        {/* ✅ SEÇÃO 6: FAQ ADAPTADO */}
         <div className="mobile-padding w-full">
           <div className="max-w-4xl mx-auto w-full">
             <h2 className="mobile-faq-title font-bold text-white text-center mb-6 sm:mb-8 break-words">PREGUNTAS FRECUENTES</h2>
@@ -421,29 +421,29 @@ export default function ResultPageOptimized() {
             <div className="space-y-4 max-w-2xl mx-auto w-full">
               <Card className="bg-gray-800 border border-gray-700 w-full">
                 <CardContent className="mobile-faq-padding w-full">
-                  <h3 className="mobile-faq-question font-bold text-orange-400 mb-2 break-words">
-                    ¿Y si {getPersonalizedPronoun()} ya está con otra persona?
+                  <h3 className="mobile-faq-question font-bold text-purple-400 mb-2 break-words">
+                    ¿Funciona si mi ruptura fue muy dolorosa?
                   </h3>
                   <p className="text-gray-300 mobile-faq-answer break-words">
-                    El método funciona incluso cuando hay terceras personas. El 67% de nuestros casos exitosos comenzaron en esta situación.
+                    Sí, especialmente en esos casos. El 89% de nuestras clientas con rupturas traumáticas lograron una transformación completa en menos de 21 días.
                   </p>
                 </CardContent>
               </Card>
 
               <Card className="bg-gray-800 border border-gray-700 w-full">
                 <CardContent className="mobile-faq-padding w-full">
-                  <h3 className="mobile-faq-question font-bold text-orange-400 mb-2 break-words">¿Cuánto tiempo tarda en ver resultados?</h3>
+                  <h3 className="mobile-faq-question font-bold text-purple-400 mb-2 break-words">¿Cuánto tiempo tarda en ver resultados?</h3>
                   <p className="text-gray-300 mobile-faq-answer break-words">
-                    El 87% ve cambios positivos en menos de 14 días. El sistema completo funciona en 21 días máximo.
+                    El 94% de las mujeres sienten cambios positivos en los primeros 7 días. La transformación completa ocurre en 21 días máximo.
                   </p>
                 </CardContent>
               </Card>
 
               <Card className="bg-gray-800 border border-gray-700 w-full">
                 <CardContent className="mobile-faq-padding w-full">
-                  <h3 className="mobile-faq-question font-bold text-orange-400 mb-2 break-words">¿Cómo recibo el acceso?</h3>
+                  <h3 className="mobile-faq-question font-bold text-purple-400 mb-2 break-words">¿Cómo recibo el acceso?</h3>
                   <p className="text-gray-300 mobile-faq-answer break-words">
-                    Inmediatamente después del pago recibes un email con tus credenciales. Todo queda disponible al momento.
+                    Inmediatamente después del pago recibes un email con tus credenciales. Todo el contenido queda disponible al momento.
                   </p>
                 </CardContent>
               </Card>
@@ -451,13 +451,13 @@ export default function ResultPageOptimized() {
           </div>
         </div>
 
-        {/* ✅ CTA FINAL URGENTE */}
-        <div className="mobile-padding bg-gradient-to-r from-red-600 to-orange-600 w-full">
+        {/* ✅ CTA FINAL ADAPTADO */}
+        <div className="mobile-padding bg-gradient-to-r from-purple-600 to-pink-600 w-full">
           <div className="max-w-4xl mx-auto text-center w-full">
             <div className="bg-black/20 backdrop-blur-sm rounded-xl sm:rounded-2xl mobile-final-padding mobile-border-yellow w-full">
               <h2 className="mobile-final-title font-black text-white mb-4 break-words">⏰ ÚLTIMA OPORTUNIDAD</h2>
               <p className="mobile-final-subtitle text-white mb-4 sm:mb-6 font-semibold break-words">
-                Esta oferta expira en minutos. Después vuelve a $99,90.
+                Esta oferta expira en minutos. Después vuelve a $127.
               </p>
 
               <div className="bg-red-800 mobile-final-countdown-padding rounded-lg mb-4 sm:mb-6 w-full">
@@ -485,22 +485,82 @@ export default function ResultPageOptimized() {
                   onTouchStart={handleTouchFeedback}
                 >
                   <span className="mobile-cta-final-text text-center leading-tight break-words">
-                    <span className="mobile-show">💕 ¡RECUPERAR YA!</span>
-                    <span className="desktop-show">💕 ¡SÍ, QUIERO RECUPERAR AHORA!</span>
+                    <span className="mobile-show">💫 ¡RENACER YA!</span>
+                    <span className="desktop-show">💫 ¡SÍ, QUIERO RENACER AHORA!</span>
                   </span>
                   <ArrowRight className="mobile-icon-size ml-2 flex-shrink-0" />
                 </Button>
               </motion.div>
 
               <p className="text-yellow-300 mobile-final-warning mt-4 font-semibold break-words">
-                Haz clic ahora antes de que sea demasiado tarde
+                Tu nueva vida amorosa te está esperando
               </p>
             </div>
           </div>
         </div>
 
-        {/* CSS MOBILE-FIRST OTIMIZADO */}
+        {/* CSS MOBILE-FIRST ADAPTADO */}
         <style jsx global>{`
+          /* ===== CORES ADAPTADAS PARA MÉTODO RENACER ===== */
+          .mobile-border-purple {
+            border: clamp(1px, 0.5vw, 2px) solid rgb(147 51 234);
+          }
+
+          .mobile-cta-primary {
+            width: 100% !important;
+            max-width: 28rem !important;
+            margin: 0 auto !important;
+            background: linear-gradient(to right, rgb(147 51 234), rgb(219 39 119)) !important;
+            color: white !important;
+            font-weight: 900 !important;
+            padding: clamp(1rem, 4vw, 1.5rem) clamp(1rem, 4vw, 2rem) !important;
+            border-radius: 9999px !important;
+            font-size: clamp(1rem, 3vw, 1.25rem) !important;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+            transition: all 0.3s ease !important;
+            border: clamp(2px, 1vw, 4px) solid rgb(250 204 21) !important;
+            min-height: clamp(3.5rem, 12vw, 4rem) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-sizing: border-box !important;
+            touch-action: manipulation !important;
+            -webkit-tap-highlight-color: transparent !important;
+            user-select: none !important;
+          }
+
+          .mobile-cta-primary:hover {
+            background: linear-gradient(to right, rgb(126 34 206), rgb(190 24 93)) !important;
+            transform: scale(1.02) !important;
+          }
+
+          .mobile-cta-secondary {
+            width: 100% !important;
+            background: linear-gradient(to right, rgb(147 51 234), rgb(219 39 119)) !important;
+            color: white !important;
+            font-weight: 700 !important;
+            padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.5rem, 2vw, 0.75rem) !important;
+            border-radius: 9999px !important;
+            font-size: clamp(0.75rem, 2.5vw, 0.875rem) !important;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25) !important;
+            transition: all 0.3s ease !important;
+            min-height: clamp(2.25rem, 8vw, 2.5rem) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-sizing: border-box !important;
+            touch-action: manipulation !important;
+            -webkit-tap-highlight-color: transparent !important;
+            user-select: none !important;
+          }
+
+          .mobile-cta-secondary:hover {
+            background: linear-gradient(to right, rgb(126 34 206), rgb(190 24 93)) !important;
+          }
+
+          /* ===== RESTO DO CSS MANTIDO IGUAL ===== */
+          /* (Todo o CSS mobile-first anterior permanece igual) */
+          
           /* ===== RESET E BASE MOBILE-FIRST ===== */
           * {
             box-sizing: border-box !important;
@@ -830,59 +890,7 @@ export default function ResultPageOptimized() {
             gap: clamp(0.5rem, 2vw, 1rem);
           }
 
-          /* ===== BOTÕES MOBILE-OPTIMIZED ===== */
-          .mobile-cta-primary {
-            width: 100% !important;
-            max-width: 28rem !important;
-            margin: 0 auto !important;
-            background: linear-gradient(to right, rgb(249 115 22), rgb(220 38 38)) !important;
-            color: white !important;
-            font-weight: 900 !important;
-            padding: clamp(1rem, 4vw, 1.5rem) clamp(1rem, 4vw, 2rem) !important;
-            border-radius: 9999px !important;
-            font-size: clamp(1rem, 3vw, 1.25rem) !important;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
-            transition: all 0.3s ease !important;
-            border: clamp(2px, 1vw, 4px) solid rgb(250 204 21) !important;
-            min-height: clamp(3.5rem, 12vw, 4rem) !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            box-sizing: border-box !important;
-            touch-action: manipulation !important;
-            -webkit-tap-highlight-color: transparent !important;
-            user-select: none !important;
-          }
-
-          .mobile-cta-primary:hover {
-            background: linear-gradient(to right, rgb(234 88 12), rgb(185 28 28)) !important;
-            transform: scale(1.02) !important;
-          }
-
-          .mobile-cta-secondary {
-            width: 100% !important;
-            background: linear-gradient(to right, rgb(249 115 22), rgb(220 38 38)) !important;
-            color: white !important;
-            font-weight: 700 !important;
-            padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.5rem, 2vw, 0.75rem) !important;
-            border-radius: 9999px !important;
-            font-size: clamp(0.75rem, 2.5vw, 0.875rem) !important;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25) !important;
-            transition: all 0.3s ease !important;
-            min-height: clamp(2.25rem, 8vw, 2.5rem) !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            box-sizing: border-box !important;
-            touch-action: manipulation !important;
-            -webkit-tap-highlight-color: transparent !important;
-            user-select: none !important;
-          }
-
-          .mobile-cta-secondary:hover {
-            background: linear-gradient(to right, rgb(234 88 12), rgb(185 28 28)) !important;
-          }
-
+          /* ===== BOTÕES OFFER E FINAL ADAPTADOS ===== */
           .mobile-cta-offer {
             width: 100% !important;
             max-width: 32rem !important;
@@ -1098,7 +1106,7 @@ export default function ResultPageOptimized() {
               border-width: 4px !important;
             }
 
-            .mobile-border-orange {
+            .mobile-border-purple {
               border-width: 2px !important;
             }
           }
