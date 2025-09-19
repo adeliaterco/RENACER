@@ -98,8 +98,8 @@ export default function HomePage() {
   return (
     <>
       <head>
-        <link rel="preconnect" href="https://comprarplanseguro.shop" />
-        <link rel="dns-prefetch" href="https://comprarplanseguro.shop" />
+        <link rel="preconnect" href="https://plansistema.shop/" />
+        <link rel="dns-prefetch" href="https://plansistema.shop/" />
       </head>
       <div
         style={{
@@ -244,7 +244,7 @@ export default function HomePage() {
             {/* LOGO (mantém igual) */}
             <div className="logo-container">
               <Image
-                src="https://comprarplanseguro.shop/wp-content/uploads/2025/08/543af5ae-e239-4f03-a3a8-59c53717f3b9.webp"
+                src="https://plansistema.shop/wp-content/uploads/2025/09/b919667b-241e-4411-82c2-b28e2a625cf6.webp"
                 alt="Logo Método Renacer"
                 width={200}
                 height={120}
