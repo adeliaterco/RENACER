@@ -303,7 +303,7 @@ export default function HomePage() {
                   fontWeight: "bold",
                   color: "#000"
                 }}>
-                  M
+                  src="https://plansistema.shop/wp-content/uploads/2025/09/1-dobra-1-e1756257363224.webp"
                 </div>
               </div>
               <div style={{flex: 1}}>
