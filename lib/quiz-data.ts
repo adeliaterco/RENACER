@@ -186,7 +186,7 @@ export const quizSteps = [
     autoAdvance: true,
     elements: {
       expertPhoto: true,
-      expertImage: "https://comprarplanseguro.shop/wp-content/uploads/2025/09/Generated-Image-September-07_-2025-12_00AM-_1_-e1757389439336.webp",
+      expertImage: "https://nutricaoalimentos.shop/wp-content/uploads/2025/09/0a259523-4766-4d8e-8a83-928755309fae-e1758319116344.webp",
       autoMessage: "Basándome en 8 años de experiencia ayudando a mujeres como tú...",
       profileComplete: "90%",
     },
@@ -199,7 +199,7 @@ export const quizSteps = [
     note: "Estoy aquí para guiarte personalmente en este viaje de transformación. En los últimos 8 años, he ayudado a más de 4.200 mujeres a sanar, crecer y atraer el amor consciente usando este método exclusivo.",
     elements: {
       expertPhoto: true,
-      expertImage: "https://comprarplanseguro.shop/wp-content/uploads/2025/09/Generated-Image-September-07_-2025-12_00AM-_1_-e1757389439336.webp",
+      expertImage: "https://nutricaoalimentos.shop/wp-content/uploads/2025/09/0a259523-4766-4d8e-8a83-928755309fae-e1758319116344.webp",
       profileComplete: "95%",
       helpedCounter: "Mujeres transformadas hoy: 23",
       compatibilityCalc: "92,3%",
