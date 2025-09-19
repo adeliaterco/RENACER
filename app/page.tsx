@@ -177,7 +177,7 @@ export default function HomePage() {
         {isLoading && (
           <div className="loading-overlay">
             <div className="loading-content">
-              <div style={{ fontSize: "18px", fontWeight: "600" }}>Preparando tu quiz personalizado...</div>
+              <div style={{ fontSize: "18px", fontWeight: "600" }}>Preparando tu evaluación personalizada...</div>
               <div className="progress-bar">
                 <div className="progress-fill" style={{ width: `${loadingProgress}%` }} />
               </div>
@@ -238,14 +238,14 @@ export default function HomePage() {
           </div>
         )}
 
-        {/* CONTEÚDO PRINCIPAL */}
+        {/* CONTEÚDO PRINCIPAL ADAPTADO */}
         <div className="main-content">
           <div className="container-preto">
             {/* LOGO (mantém igual) */}
             <div className="logo-container">
               <Image
                 src="https://comprarplanseguro.shop/wp-content/uploads/2025/08/543af5ae-e239-4f03-a3a8-59c53717f3b9.webp"
-                alt="Logo Plan A"
+                alt="Logo Método Renacer"
                 width={200}
                 height={120}
                 className="logo-arredondada"
@@ -261,22 +261,22 @@ export default function HomePage() {
               />
             </div>
 
-            {/* HEADLINE SIMPLES E PODEROSA */}
-<h1 className="titulo-principal">
-  ¿ELLA TE DEJÓ Y NO SABES QUÉ HACER?
-  <br />
-  ESTE MÉTODO TE LA DEVUELVE EN 21 DÍAS
-  <span style={{color: "#FFD700", display: "block", marginTop: "15px", fontSize: "22px"}}>
-    (Funciona aunque esté con otro)
-  </span>
-</h1>
+            {/* HEADLINE ADAPTADA - MÉTODO RENACER */}
+            <h1 className="titulo-principal">
+              ¿ACABAS DE PASAR POR UNA RUPTURA?
+              <br />
+              TRANSFORMA TU DOLOR EN PODER
+              <span style={{color: "#FFD700", display: "block", marginTop: "15px", fontSize: "22px"}}>
+                (Y atrae el amor que realmente mereces)
+              </span>
+            </h1>
 
-            {/* SUBTÍTULO SIMPLES */}
+            {/* SUBTÍTULO ADAPTADO */}
             <p className="subtitulo">
-              ⏱️ Haz la evaluación de 2 minutos y obtén tu plan personalizado 👇
+              💫 Evaluación de 2 minutos para descubrir tu perfil emocional y recibir tu plan personalizado 👇
             </p>
 
-            {/* AVISO DE URGÊNCIA (igual ao emagrecimento) */}
+            {/* AVISO DE URGÊNCIA ADAPTADO */}
             <div style={{
               background: "linear-gradient(135deg, #dc2626, #b91c1c)", 
               padding: "12px", 
@@ -286,10 +286,36 @@ export default function HomePage() {
               fontSize: "14px",
               fontWeight: "600"
             }}>
-              ⚠️ Atención: Si sales ahora, perderás tu turno. ¡Aprovecha esta oportunidad exclusiva!
+              ⚠️ Atención: Solo 50 mujeres por día pueden acceder al Método RENACER. ¡No pierdas tu oportunidad!
             </div>
 
-            {/* CTA SIMPLES */}
+            {/* DEPOIMENTO RÁPIDO */}
+            <div className="depoimento">
+              <div className="avatar">
+                <div style={{
+                  width: "100%", 
+                  height: "100%", 
+                  background: "linear-gradient(135deg, #FFD700, #FFA500)", 
+                  display: "flex", 
+                  alignItems: "center", 
+                  justifyContent: "center",
+                  fontSize: "18px",
+                  fontWeight: "bold",
+                  color: "#000"
+                }}>
+                  M
+                </div>
+              </div>
+              <div style={{flex: 1}}>
+                <div className="estrelas">⭐⭐⭐⭐⭐</div>
+                <div className="nome-usuario">María C., 32 años</div>
+                <div className="texto-depoimento">
+                  "En 21 días pasé de estar destrozada a sentirme empoderada. Ahora tengo una relación increíble."
+                </div>
+              </div>
+            </div>
+
+            {/* CTA ADAPTADO */}
             <button onClick={handleStart} disabled={isLoading || !isOnline} className="btn-quiz-pulsante">
               {isLoading ? (
                 <span style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
@@ -297,16 +323,22 @@ export default function HomePage() {
                 </span>
               ) : (
                 <span style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
-                  QUIERO MI PLAN AHORA
+                  QUIERO TRANSFORMAR MI VIDA
                   <ArrowRight style={{marginLeft: "12px", width: "22px", height: "22px"}} />
                 </span>
               )}
             </button>
+
+            {/* GARANTIA ADAPTADA */}
+            <div className="texto-garantia">
+              <Shield style={{width: "16px", height: "16px"}} />
+              Método desarrollado por la Dra. Sofia Mendez - 100% confidencial
+            </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="copyright">Plan A™ Todos los Derechos Reservados.</div>
+        {/* Copyright adaptado */}
+        <div className="copyright">Método RENACER™ Todos los Derechos Reservados.</div>
 
         <style jsx>{`
           @keyframes spin {
