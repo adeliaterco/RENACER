@@ -229,7 +229,7 @@ export default function ResultPageOptimized() {
           </div>
         </div>
 
-        {/* ✅ SEÇÃO 3: PROVA SOCIAL ADAPTADA (DEPOIMENTO COM VTURB FORMATO NORMAL) */}
+        {/* ✅ SEÇÃO 3: PROVA SOCIAL ADAPTADA (DEPOIMENTO COM VTURB FORMATO STORY) */}
         <div className="mobile-padding bg-gradient-to-r from-black to-gray-900 w-full">
           <div className="max-w-4xl mx-auto w-full">
             <div className="text-center mb-6">
@@ -241,9 +241,9 @@ export default function ResultPageOptimized() {
               </p>
             </div>
 
-            {/* Depoimento em Vídeo com VTurb - FORMATO NORMAL */}
+            {/* Depoimento em Vídeo com VTurb - FORMATO STORY (9:16) */}
             <div className="flex justify-center mb-6 sm:mb-8 w-full">
-              <div className="w-full max-w-md">
+              <div className="w-full max-w-sm">
                 <div className="relative bg-black rounded-xl sm:rounded-2xl p-2 mobile-border-purple shadow-xl overflow-hidden w-full">
                   
                   {/* Header do Depoimento */}
@@ -259,12 +259,12 @@ export default function ResultPageOptimized() {
                     </div>
                   </div>
 
-                  {/* Vídeo Depoimento com VTurb - FORMATO NORMAL 16:9 */}
-                  <div className="relative mobile-normal-video bg-gray-900 rounded-xl overflow-hidden w-full">
-                    <div className="relative z-10 w-full mobile-normal-container">
+                  {/* Vídeo Depoimento com VTurb - FORMATO STORY (9:16) */}
+                  <div className="relative mobile-story-video bg-gray-900 rounded-xl overflow-hidden w-full">
+                    <div className="relative z-10 w-full mobile-story-container">
                       <vturb-smartplayer 
                         id="vid-68ce171a1563ea2ce059118d" 
-                        className="mobile-vturb-normal-player"
+                        className="mobile-vturb-story-player"
                       ></vturb-smartplayer>
                     </div>
                   </div>
@@ -507,7 +507,7 @@ export default function ResultPageOptimized() {
           </div>
         </div>
 
-        {/* CSS MOBILE-FIRST ADAPTADO COM VTURB FORMATO NORMAL */}
+        {/* CSS MOBILE-FIRST ADAPTADO COM VTURB FORMATO STORY CORRIGIDO */}
         <style jsx global>{`
           /* ===== CORES ADAPTADAS PARA MÉTODO RENACER ===== */
           .mobile-border-purple {
@@ -566,23 +566,71 @@ export default function ResultPageOptimized() {
             background: linear-gradient(to right, rgb(126 34 206), rgb(190 24 93)) !important;
           }
 
-          /* ===== VTURB NORMAL PLAYER (16:9) ===== */
-          .mobile-normal-video {
-            aspect-ratio: 16/9 !important;
+          /* ===== VTURB STORY PLAYER (9:16) - CORREÇÃO PRINCIPAL ===== */
+          .mobile-story-video {
+            aspect-ratio: 9/16 !important;
             height: auto !important;
             width: 100% !important;
             max-width: 100% !important;
+            min-height: clamp(300px, 60vw, 500px) !important;
           }
 
-          .mobile-normal-container {
+          .mobile-story-container {
             width: 100% !important;
             max-width: 100% !important;
             position: relative !important;
             overflow: hidden !important;
             border-radius: clamp(0.5rem, 2vw, 1rem) !important;
+            aspect-ratio: 9/16 !important;
           }
 
-          .mobile-vturb-normal-player {
+          .mobile-vturb-story-player {
+            display: block !important;
+            margin: 0 auto !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            border-radius: clamp(0.5rem, 2vw, 1rem) !important;
+            overflow: hidden !important;
+            aspect-ratio: 9/16 !important;
+            height: auto !important;
+            min-height: clamp(300px, 60vw, 500px) !important;
+            object-fit: cover !important;
+          }
+
+          /* SELETOR ESPECÍFICO PARA O SEGUNDO VÍDEO (STORY) */
+          vturb-smartplayer[id="vid-68ce171a1563ea2ce059118d"] {
+            border-radius: clamp(0.5rem, 2vw, 1rem) !important;
+            overflow: hidden !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            display: block !important;
+            aspect-ratio: 9/16 !important;
+            contain: layout style paint !important;
+            object-fit: cover !important;
+            min-height: clamp(300px, 60vw, 500px) !important;
+          }
+
+          /* GARANTIR QUE O IFRAME INTERNO TAMBÉM SEJA 9:16 */
+          vturb-smartplayer[id="vid-68ce171a1563ea2ce059118d"] iframe {
+            aspect-ratio: 9/16 !important;
+            width: 100% !important;
+            height: auto !important;
+            min-height: clamp(300px, 60vw, 500px) !important;
+            object-fit: cover !important;
+          }
+
+          /* ===== VTURB NORMAL PLAYER (16:9) - PRIMEIRO VÍDEO MANTIDO ===== */
+          .mobile-video-container {
+            width: 100% !important;
+            max-width: 100% !important;
+            position: relative !important;
+            overflow: hidden !important;
+            border-radius: clamp(0.5rem, 2vw, 1rem) !important;
+            aspect-ratio: 16/9 !important;
+          }
+
+          .mobile-vturb-player {
             display: block !important;
             margin: 0 auto !important;
             width: 100% !important;
@@ -591,10 +639,11 @@ export default function ResultPageOptimized() {
             overflow: hidden !important;
             aspect-ratio: 16/9 !important;
             height: auto !important;
-            min-height: clamp(200px, 40vw, 300px) !important;
+            min-height: clamp(200px, 40vw, 400px) !important;
           }
 
-          vturb-smartplayer[id="vid-68ce171a1563ea2ce059118d"] {
+          /* SELETOR ESPECÍFICO PARA O PRIMEIRO VÍDEO (NORMAL 16:9) */
+          vturb-smartplayer[id="vid-68ce0e1d899f9164167d99ad"] {
             border-radius: clamp(0.5rem, 2vw, 1rem) !important;
             overflow: hidden !important;
             width: 100% !important;
@@ -603,6 +652,7 @@ export default function ResultPageOptimized() {
             display: block !important;
             aspect-ratio: 16/9 !important;
             contain: layout style paint !important;
+            min-height: clamp(200px, 40vw, 400px) !important;
           }
 
           /* ===== RESTO DO CSS MANTIDO IGUAL ===== */
@@ -861,7 +911,7 @@ export default function ResultPageOptimized() {
             line-height: 1;
           }
 
-          .mobile-avatar {
+                    .mobile-avatar {
             width: clamp(1.75rem, 5vw, 2rem);
             height: clamp(1.75rem, 5vw, 2rem);
           }
@@ -925,7 +975,7 @@ export default function ResultPageOptimized() {
             border: clamp(2px, 1vw, 4px) solid rgb(34 197 94);
           }
 
-                    /* ===== GRID RESPONSIVO ===== */
+          /* ===== GRID RESPONSIVO ===== */
           .mobile-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1018,39 +1068,6 @@ export default function ResultPageOptimized() {
             font-weight: 800 !important;
           }
 
-          /* ===== PLAYERS DE VÍDEO MOBILE COM VTURB ===== */
-          .mobile-video-container {
-            width: 100% !important;
-            max-width: 100% !important;
-            position: relative !important;
-            overflow: hidden !important;
-            border-radius: clamp(0.5rem, 2vw, 1rem) !important;
-          }
-
-          .mobile-vturb-player {
-            display: block !important;
-            margin: 0 auto !important;
-            width: 100% !important;
-            max-width: 100% !important;
-            border-radius: clamp(0.5rem, 2vw, 1rem) !important;
-            overflow: hidden !important;
-            aspect-ratio: 16/9 !important;
-            height: auto !important;
-            min-height: clamp(200px, 40vw, 400px) !important;
-          }
-
-          vturb-smartplayer {
-            border-radius: clamp(0.5rem, 2vw, 1rem) !important;
-            overflow: hidden !important;
-            width: 100% !important;
-            max-width: 100% !important;
-            height: auto !important;
-            display: block !important;
-            aspect-ratio: 16/9 !important;
-            contain: layout style paint !important;
-            min-height: clamp(200px, 40vw, 400px) !important;
-          }
-
           /* ===== OTIMIZAÇÕES PARA TELAS MUITO PEQUENAS ===== */
           @media (max-width: 375px) {
             .mobile-padding {
@@ -1090,12 +1107,12 @@ export default function ResultPageOptimized() {
               min-height: 180px !important;
             }
 
-            .mobile-vturb-normal-player {
-              min-height: 150px !important;
+            .mobile-vturb-story-player {
+              min-height: 250px !important;
             }
 
-            .mobile-normal-video {
-              min-height: 150px !important;
+            .mobile-story-video {
+              min-height: 250px !important;
             }
           }
 
@@ -1119,6 +1136,14 @@ export default function ResultPageOptimized() {
 
             .mobile-border-purple {
               border-width: 2px !important;
+            }
+
+            .mobile-story-video {
+              min-height: 400px !important;
+            }
+
+            .mobile-vturb-story-player {
+              min-height: 400px !important;
             }
           }
 
@@ -1210,12 +1235,12 @@ export default function ResultPageOptimized() {
               min-height: 150px !important;
             }
 
-            .mobile-vturb-normal-player {
-              min-height: 120px !important;
+            .mobile-vturb-story-player {
+              min-height: 200px !important;
             }
 
-            .mobile-normal-video {
-              min-height: 120px !important;
+            .mobile-story-video {
+              min-height: 200px !important;
             }
           }
 
@@ -1286,6 +1311,33 @@ export default function ResultPageOptimized() {
             .max-w-md { max-width: 28rem !important; }
             .max-w-sm { max-width: 24rem !important; }
             .max-w-xs { max-width: 20rem !important; }
+          }
+
+          /* ===== FORÇAR ASPECT RATIO STORY PARA VTURB ===== */
+          vturb-smartplayer[id="vid-68ce171a1563ea2ce059118d"] video {
+            aspect-ratio: 9/16 !important;
+            object-fit: cover !important;
+            width: 100% !important;
+            height: auto !important;
+          }
+
+          /* ===== FALLBACK PARA NAVEGADORES SEM SUPORTE A ASPECT-RATIO ===== */
+          @supports not (aspect-ratio: 9/16) {
+            .mobile-story-video {
+              position: relative;
+              width: 100%;
+              max-width: 400px;
+              height: 0;
+              padding-bottom: 177.78%; /* 16/9 = 1.778, então 100/1.778 = 56.25% para 9/16 seria 177.78% */
+            }
+
+            .mobile-vturb-story-player {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
           }
         `}</style>
       </div>
