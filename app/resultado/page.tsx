@@ -229,7 +229,7 @@ export default function ResultPageOptimized() {
           </div>
         </div>
 
-        {/* ✅ SEÇÃO 3: PROVA SOCIAL ADAPTADA (DEPOIMENTO COM VTURB FORMATO STORY) - COM OVERLAY */}
+        {/* ✅ SEÇÃO 3: PROVA SOCIAL ADAPTADA (DEPOIMENTO COM VTURB FORMATO STORY) - COM OVERLAY AUMENTADO */}
         <div className="mobile-padding bg-gradient-to-r from-black to-gray-900 w-full">
           <div className="max-w-4xl mx-auto w-full">
             <div className="text-center mb-6">
@@ -241,7 +241,7 @@ export default function ResultPageOptimized() {
               </p>
             </div>
 
-            {/* Depoimento em Vídeo com VTurb - FORMATO STORY (9:16) COM OVERLAY */}
+            {/* Depoimento em Vídeo com VTurb - FORMATO STORY (9:16) COM OVERLAY AUMENTADO */}
             <div className="flex justify-center mb-6 sm:mb-8 w-full">
               <div className="w-full max-w-sm">
                 <div className="relative bg-black rounded-xl sm:rounded-2xl p-2 mobile-border-purple shadow-xl overflow-hidden w-full">
@@ -259,7 +259,7 @@ export default function ResultPageOptimized() {
                     </div>
                   </div>
 
-                  {/* 🎯 VÍDEO DEPOIMENTO COM OVERLAY PARA OCULTAR MARCA D'ÁGUA */}
+                  {/* 🎯 VÍDEO DEPOIMENTO COM OVERLAY AUMENTADO PARA OCULTAR MARCA D'ÁGUA */}
                   <div className="relative mobile-story-video bg-gray-900 rounded-xl overflow-hidden w-full">
                     <div className="relative z-10 w-full mobile-story-container">
                       <vturb-smartplayer 
@@ -268,8 +268,8 @@ export default function ResultPageOptimized() {
                       ></vturb-smartplayer>
                     </div>
                     
-                    {/* 🔥 OVERLAY PARA OCULTAR MARCA D'ÁGUA DA HEYGEN */}
-                    <div className="story-watermark-overlay"></div>
+                    {/* 🔥 OVERLAY AUMENTADO PARA OCULTAR MARCA D'ÁGUA DA HEYGEN */}
+                    <div className="story-watermark-overlay-large"></div>
                   </div>
 
                   {/* Footer com CTA Adaptado */}
@@ -510,51 +510,60 @@ export default function ResultPageOptimized() {
           </div>
         </div>
 
-        {/* 🎯 CSS MOBILE-FIRST ADAPTADO COM OVERLAY PARA MARCA D'ÁGUA */}
+        {/* 🎯 CSS MOBILE-FIRST ADAPTADO COM OVERLAY AUMENTADO PARA MARCA D'ÁGUA */}
         <style jsx global>{`
-          /* ===== OVERLAY PARA OCULTAR MARCA D'ÁGUA HEYGEN ===== */
-          .story-watermark-overlay {
+          /* ===== OVERLAY AUMENTADO PARA OCULTAR MARCA D'ÁGUA HEYGEN ===== */
+          .story-watermark-overlay-large {
             position: absolute !important;
             bottom: 0 !important;
             left: 0 !important;
             right: 0 !important;
-            height: clamp(45px, 10vw, 65px) !important;
+            height: clamp(90px, 20vw, 130px) !important;
             background: linear-gradient(
               to top,
-              rgba(0, 0, 0, 0.95) 0%,
-              rgba(0, 0, 0, 0.85) 30%,
-              rgba(0, 0, 0, 0.6) 60%,
-              rgba(0, 0, 0, 0.3) 80%,
+              rgba(0, 0, 0, 0.98) 0%,
+              rgba(0, 0, 0, 0.95) 20%,
+              rgba(0, 0, 0, 0.85) 40%,
+              rgba(0, 0, 0, 0.70) 60%,
+              rgba(0, 0, 0, 0.50) 75%,
+              rgba(0, 0, 0, 0.25) 85%,
+              rgba(0, 0, 0, 0.10) 95%,
               transparent 100%
             ) !important;
-            z-index: 25 !important;
+            z-index: 999999 !important;
             pointer-events: none !important;
             border-radius: 0 0 clamp(0.5rem, 2vw, 1rem) clamp(0.5rem, 2vw, 1rem) !important;
             backdrop-filter: blur(1px) !important;
             -webkit-backdrop-filter: blur(1px) !important;
           }
 
-          /* AJUSTES RESPONSIVOS PARA O OVERLAY */
+          /* AJUSTES RESPONSIVOS PARA O OVERLAY AUMENTADO */
           @media (max-width: 375px) {
-            .story-watermark-overlay {
-              height: 40px !important;
+            .story-watermark-overlay-large {
+              height: 80px !important;
             }
           }
 
           @media (min-width: 640px) {
-            .story-watermark-overlay {
-              height: 55px !important;
+            .story-watermark-overlay-large {
+              height: 110px !important;
             }
           }
 
           @media (min-width: 768px) {
-            .story-watermark-overlay {
-              height: 60px !important;
+            .story-watermark-overlay-large {
+              height: 120px !important;
+            }
+          }
+
+          @media (min-width: 1024px) {
+            .story-watermark-overlay-large {
+              height: 130px !important;
             }
           }
 
           /* GARANTIR QUE O OVERLAY FUNCIONE EM TODOS OS PLAYERS VTURB */
-          vturb-smartplayer[id="vid-68ce171a1563ea2ce059118d"] + .story-watermark-overlay {
+          vturb-smartplayer[id="vid-68ce171a1563ea2ce059118d"] + .story-watermark-overlay-large {
             z-index: 999999 !important;
           }
 
@@ -591,7 +600,7 @@ export default function ResultPageOptimized() {
             transform: scale(1.02) !important;
           }
 
-                    .mobile-cta-secondary {
+          .mobile-cta-secondary {
             width: 100% !important;
             background: linear-gradient(to right, rgb(147 51 234), rgb(219 39 119)) !important;
             color: white !important;
@@ -879,7 +888,7 @@ export default function ResultPageOptimized() {
             line-height: 1.3;
           }
 
-          .mobile-stats-number {
+                    .mobile-stats-number {
             font-size: clamp(1.25rem, 4vw, 1.5rem);
             line-height: 1.2;
           }
@@ -1164,8 +1173,8 @@ export default function ResultPageOptimized() {
               min-height: 250px !important;
             }
 
-            .story-watermark-overlay {
-              height: 35px !important;
+            .story-watermark-overlay-large {
+              height: 70px !important;
             }
           }
 
@@ -1199,8 +1208,8 @@ export default function ResultPageOptimized() {
               min-height: 400px !important;
             }
 
-            .story-watermark-overlay {
-              height: 55px !important;
+            .story-watermark-overlay-large {
+              height: 110px !important;
             }
           }
 
@@ -1300,8 +1309,8 @@ export default function ResultPageOptimized() {
               min-height: 200px !important;
             }
 
-            .story-watermark-overlay {
-              height: 30px !important;
+            .story-watermark-overlay-large {
+              height: 60px !important;
             }
           }
 
@@ -1402,7 +1411,7 @@ export default function ResultPageOptimized() {
           }
 
           /* ===== GARANTIR MÁXIMA PRIORIDADE DO OVERLAY ===== */
-          .story-watermark-overlay {
+          .story-watermark-overlay-large {
             z-index: 999999 !important;
             position: absolute !important;
             pointer-events: none !important;
@@ -1415,13 +1424,63 @@ export default function ResultPageOptimized() {
             bottom: 0 !important;
             left: 0 !important;
             right: 0 !important;
-            height: clamp(45px, 10vw, 65px) !important;
+            height: clamp(90px, 20vw, 130px) !important;
             background: linear-gradient(
               to top,
-              rgba(0, 0, 0, 0.95) 0%,
-              rgba(0, 0, 0, 0.85) 30%,
-              rgba(0, 0, 0, 0.6) 60%,
-              rgba(0, 0, 0, 0.3) 80%,
+              rgba(0, 0, 0, 0.98) 0%,
+              rgba(0, 0, 0, 0.95) 20%,
+              rgba(0, 0, 0, 0.85) 40%,
+              rgba(0, 0, 0, 0.70) 60%,
+              rgba(0, 0, 0, 0.50) 75%,
+              rgba(0, 0, 0, 0.25) 85%,
+              rgba(0, 0, 0, 0.10) 95%,
+              transparent 100%
+            ) !important;
+            z-index: 999999 !important;
+            pointer-events: none !important;
+            border-radius: 0 0 clamp(0.5rem, 2vw, 1rem) clamp(0.5rem, 2vw, 1rem) !important;
+          }
+
+          /* ===== OVERLAY EXTRA PARA GARANTIR COBERTURA TOTAL ===== */
+          @media (max-width: 480px) {
+            .story-watermark-overlay-large {
+              height: 85px !important;
+              background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.99) 0%,
+                rgba(0, 0, 0, 0.97) 15%,
+                rgba(0, 0, 0, 0.90) 30%,
+                rgba(0, 0, 0, 0.80) 45%,
+                rgba(0, 0, 0, 0.65) 60%,
+                rgba(0, 0, 0, 0.45) 75%,
+                rgba(0, 0, 0, 0.25) 85%,
+                rgba(0, 0, 0, 0.10) 95%,
+                transparent 100%
+              ) !important;
+            }
+          }
+
+          /* ===== FORÇAR OVERLAY EM TODOS OS ELEMENTOS VTURB ===== */
+          vturb-smartplayer[id="vid-68ce171a1563ea2ce059118d"] {
+            position: relative !important;
+          }
+
+          vturb-smartplayer[id="vid-68ce171a1563ea2ce059118d"]::after {
+            content: '' !important;
+            position: absolute !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            height: clamp(90px, 20vw, 130px) !important;
+            background: linear-gradient(
+              to top,
+              rgba(0, 0, 0, 0.98) 0%,
+              rgba(0, 0, 0, 0.95) 20%,
+              rgba(0, 0, 0, 0.85) 40%,
+              rgba(0, 0, 0, 0.70) 60%,
+              rgba(0, 0, 0, 0.50) 75%,
+              rgba(0, 0, 0, 0.25) 85%,
+              rgba(0, 0, 0, 0.10) 95%,
               transparent 100%
             ) !important;
             z-index: 999999 !important;
