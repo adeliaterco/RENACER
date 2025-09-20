@@ -229,7 +229,7 @@ export default function ResultPageOptimized() {
           </div>
         </div>
 
-        {/* ✅ SEÇÃO 3: PROVA SOCIAL ADAPTADA (DEPOIMENTO COM VTURB FORMATO STORY) */}
+        {/* ✅ SEÇÃO 3: PROVA SOCIAL ADAPTADA (DEPOIMENTO COM VTURB FORMATO STORY) - COM OVERLAY */}
         <div className="mobile-padding bg-gradient-to-r from-black to-gray-900 w-full">
           <div className="max-w-4xl mx-auto w-full">
             <div className="text-center mb-6">
@@ -241,7 +241,7 @@ export default function ResultPageOptimized() {
               </p>
             </div>
 
-            {/* Depoimento em Vídeo com VTurb - FORMATO STORY (9:16) */}
+            {/* Depoimento em Vídeo com VTurb - FORMATO STORY (9:16) COM OVERLAY */}
             <div className="flex justify-center mb-6 sm:mb-8 w-full">
               <div className="w-full max-w-sm">
                 <div className="relative bg-black rounded-xl sm:rounded-2xl p-2 mobile-border-purple shadow-xl overflow-hidden w-full">
@@ -259,7 +259,7 @@ export default function ResultPageOptimized() {
                     </div>
                   </div>
 
-                  {/* Vídeo Depoimento com VTurb - FORMATO STORY (9:16) */}
+                  {/* 🎯 VÍDEO DEPOIMENTO COM OVERLAY PARA OCULTAR MARCA D'ÁGUA */}
                   <div className="relative mobile-story-video bg-gray-900 rounded-xl overflow-hidden w-full">
                     <div className="relative z-10 w-full mobile-story-container">
                       <vturb-smartplayer 
@@ -267,6 +267,9 @@ export default function ResultPageOptimized() {
                         className="mobile-vturb-story-player"
                       ></vturb-smartplayer>
                     </div>
+                    
+                    {/* 🔥 OVERLAY PARA OCULTAR MARCA D'ÁGUA DA HEYGEN */}
+                    <div className="story-watermark-overlay"></div>
                   </div>
 
                   {/* Footer com CTA Adaptado */}
@@ -507,8 +510,54 @@ export default function ResultPageOptimized() {
           </div>
         </div>
 
-        {/* CSS MOBILE-FIRST ADAPTADO COM VTURB FORMATO STORY CORRIGIDO */}
+        {/* 🎯 CSS MOBILE-FIRST ADAPTADO COM OVERLAY PARA MARCA D'ÁGUA */}
         <style jsx global>{`
+          /* ===== OVERLAY PARA OCULTAR MARCA D'ÁGUA HEYGEN ===== */
+          .story-watermark-overlay {
+            position: absolute !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            height: clamp(45px, 10vw, 65px) !important;
+            background: linear-gradient(
+              to top,
+              rgba(0, 0, 0, 0.95) 0%,
+              rgba(0, 0, 0, 0.85) 30%,
+              rgba(0, 0, 0, 0.6) 60%,
+              rgba(0, 0, 0, 0.3) 80%,
+              transparent 100%
+            ) !important;
+            z-index: 25 !important;
+            pointer-events: none !important;
+            border-radius: 0 0 clamp(0.5rem, 2vw, 1rem) clamp(0.5rem, 2vw, 1rem) !important;
+            backdrop-filter: blur(1px) !important;
+            -webkit-backdrop-filter: blur(1px) !important;
+          }
+
+          /* AJUSTES RESPONSIVOS PARA O OVERLAY */
+          @media (max-width: 375px) {
+            .story-watermark-overlay {
+              height: 40px !important;
+            }
+          }
+
+          @media (min-width: 640px) {
+            .story-watermark-overlay {
+              height: 55px !important;
+            }
+          }
+
+          @media (min-width: 768px) {
+            .story-watermark-overlay {
+              height: 60px !important;
+            }
+          }
+
+          /* GARANTIR QUE O OVERLAY FUNCIONE EM TODOS OS PLAYERS VTURB */
+          vturb-smartplayer[id="vid-68ce171a1563ea2ce059118d"] + .story-watermark-overlay {
+            z-index: 999999 !important;
+          }
+
           /* ===== CORES ADAPTADAS PARA MÉTODO RENACER ===== */
           .mobile-border-purple {
             border: clamp(1px, 0.5vw, 2px) solid rgb(147 51 234);
@@ -542,7 +591,7 @@ export default function ResultPageOptimized() {
             transform: scale(1.02) !important;
           }
 
-          .mobile-cta-secondary {
+                    .mobile-cta-secondary {
             width: 100% !important;
             background: linear-gradient(to right, rgb(147 51 234), rgb(219 39 119)) !important;
             color: white !important;
@@ -911,7 +960,7 @@ export default function ResultPageOptimized() {
             line-height: 1;
           }
 
-                    .mobile-avatar {
+          .mobile-avatar {
             width: clamp(1.75rem, 5vw, 2rem);
             height: clamp(1.75rem, 5vw, 2rem);
           }
@@ -1114,6 +1163,10 @@ export default function ResultPageOptimized() {
             .mobile-story-video {
               min-height: 250px !important;
             }
+
+            .story-watermark-overlay {
+              height: 35px !important;
+            }
           }
 
           /* ===== OTIMIZAÇÕES PARA TELAS MÉDIAS ===== */
@@ -1144,6 +1197,10 @@ export default function ResultPageOptimized() {
 
             .mobile-vturb-story-player {
               min-height: 400px !important;
+            }
+
+            .story-watermark-overlay {
+              height: 55px !important;
             }
           }
 
@@ -1242,6 +1299,10 @@ export default function ResultPageOptimized() {
             .mobile-story-video {
               min-height: 200px !important;
             }
+
+            .story-watermark-overlay {
+              height: 30px !important;
+            }
           }
 
           /* ===== OTIMIZAÇÕES PARA ACESSIBILIDADE ===== */
@@ -1338,6 +1399,34 @@ export default function ResultPageOptimized() {
               width: 100%;
               height: 100%;
             }
+          }
+
+          /* ===== GARANTIR MÁXIMA PRIORIDADE DO OVERLAY ===== */
+          .story-watermark-overlay {
+            z-index: 999999 !important;
+            position: absolute !important;
+            pointer-events: none !important;
+          }
+
+          /* ===== OVERLAY ALTERNATIVO CASO O PRIMEIRO NÃO FUNCIONE ===== */
+          .mobile-story-video::after {
+            content: '' !important;
+            position: absolute !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            height: clamp(45px, 10vw, 65px) !important;
+            background: linear-gradient(
+              to top,
+              rgba(0, 0, 0, 0.95) 0%,
+              rgba(0, 0, 0, 0.85) 30%,
+              rgba(0, 0, 0, 0.6) 60%,
+              rgba(0, 0, 0, 0.3) 80%,
+              transparent 100%
+            ) !important;
+            z-index: 999999 !important;
+            pointer-events: none !important;
+            border-radius: 0 0 clamp(0.5rem, 2vw, 1rem) clamp(0.5rem, 2vw, 1rem) !important;
           }
         `}</style>
       </div>
