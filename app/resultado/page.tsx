@@ -77,7 +77,7 @@ export default function ResultPageOptimized() {
     } catch (error) {
       console.error("Error al registrar evento de clic:", error)
     }
-    window.open("https://pay.hotmart.com/F100142422S?off=0p2j9dbs&checkoutMode=10&offDiscount=RENACER", "_blank")
+    window.open("https://pay.hotmart.com/T101996755F?off=wdtbjbr1&checkoutMode=10&offDiscount=RENACER", "_blank")
   }
 
   const getPersonalizedPronoun = () => {
