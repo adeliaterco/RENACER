@@ -6,7 +6,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Plan A",
+  title: "Renacer",
   description: "El sistema completo para recuperar a tu amor perdido en 21 días o menos",
   generator: 'v0.dev'
 }
@@ -37,7 +37,7 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.pixelId = "683e4507be02a8b1bece6041";
+              window.pixelId = "68ced1163b4e47ceafd56fb8";
               var a = document.createElement("script");
               a.setAttribute("async", "");
               a.setAttribute("defer", "");
