@@ -58,7 +58,7 @@ export const quizSteps = [
       testimonialDisplay: true,
       testimonialName: "Ana L.",
       testimonialText: "¡En 3 semanas ya me sentía como una nueva mujer y atraje a mi alma gemela!",
-      testimonialImage: "https://comprarplanseguro.shop/wp-content/uploads/2025/08/Captura-de-Tela-2025-08-08-as-19.01.05.png",
+      testimonialImage: "https://plansistema.shop/wp-content/uploads/2025/09/01.webp",
     },
   },
   {
