@@ -237,7 +237,7 @@ export default function ResultPageOptimized() {
                 💬 <span className="text-purple-400">TESTIMONIO REAL</span> DE TRANSFORMACIÓN
               </h3>
               <p className="text-gray-300 mobile-small-text break-words">
-                Escucha cómo María transformó completamente su vida amorosa
+                Escucha cómo Lucía transformó completamente su vida amorosa
               </p>
             </div>
 
@@ -254,7 +254,7 @@ export default function ResultPageOptimized() {
                       </div>
                     </div>
                     <div className="flex-1 text-left min-w-0">
-                      <h4 className="text-white font-bold mobile-name-text truncate">María C.</h4>
+                      <h4 className="text-white font-bold mobile-name-text truncate">Lucía M.</h4>
                       <p className="text-green-400 mobile-status-text font-semibold">✅ Transformada en 18 días</p>
                     </div>
                   </div>
