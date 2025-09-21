@@ -48,9 +48,9 @@ export default function ResultPageOptimized() {
     // Carrega scripts do VTurb
     const loadVTurbScripts = () => {
       // Script principal (VSL)
-      if (!document.querySelector('script[src*="68cf84b4c9c4c158bda807e8"]')) {
+      if (!document.querySelector('script[src*="68cf8fad0450601628c937e0"]')) {
         const script1 = document.createElement("script")
-        script1.src = "https://scripts.converteai.net/529d9a9b-9a02-4648-9d1f-be6bbe950e40/players/68cf84b4c9c4c158bda807e8/v4/player.js"
+        script1.src = "https://scripts.converteai.net/529d9a9b-9a02-4648-9d1f-be6bbe950e40/players/68cf8fad0450601628c937e0/v4/player.js"
         script1.async = true
         document.head.appendChild(script1)
       }
@@ -182,7 +182,7 @@ export default function ResultPageOptimized() {
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-xl sm:rounded-2xl animate-pulse"></div>
                   <div className="relative z-10 w-full mobile-video-container">
                     <vturb-smartplayer 
-                      id="vid-68cf84b4c9c4c158bda807e8" 
+                      id="vid-68cf8fad0450601628c937e0" 
                       className="mobile-vturb-player"
                     ></vturb-smartplayer>
                   </div>
@@ -701,7 +701,7 @@ export default function ResultPageOptimized() {
           }
 
           /* SELETOR ESPECÍFICO PARA O PRIMEIRO VÍDEO (NORMAL 16:9) */
-          vturb-smartplayer[id="vid-68cf84b4c9c4c158bda807e8"] {
+          vturb-smartplayer[id="vid-68cf8fad0450601628c937e0"] {
             border-radius: clamp(0.5rem, 2vw, 1rem) !important;
             overflow: hidden !important;
             width: 100% !important;
