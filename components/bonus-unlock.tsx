@@ -83,7 +83,7 @@ export function BonusUnlock({ bonus, onComplete }: BonusUnlockProps) {
               className="space-y-4"
             >
               <p className="text-gray-600 text-sm bg-gray-100 p-3 rounded-lg">
-                Recibirás esta bonificación junto con el Plan A al final del cuestionario.
+                Recibirás esta bonificación junto con tu MÉTODO RENACER personalizado al final de la evaluación.
               </p>
 
               <div className="flex justify-center">
