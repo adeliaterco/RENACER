@@ -354,13 +354,13 @@ export default function HomePage() {
             {/* GARANTIA ADAPTADA */}
             <div className="texto-garantia">
               <Shield style={{width: "16px", height: "16px"}} />
-              Método desarrollado por la Dra. Sofia Mendez - 100% confidencial
+              100% confidencial
             </div>
           </div>
         </div>
 
         {/* Copyright adaptado */}
-        <div className="copyright">Método RENACER™ Todos los Derechos Reservados.</div>
+        <div className="copyright">RENACER™ Todos los Derechos Reservados.</div>
 
         <style jsx>{`
           @keyframes spin {
